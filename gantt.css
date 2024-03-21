@@ -1,48 +1,82 @@
+/* Updated colors for even and odd row containers */
+.sg_row_desc_container.even,
+.sg_row_val_container.even {
+  background-color: #f7f7f7; /* Light gray for even rows, providing a subtle contrast */
+}
+
+.sg_row_desc_container.odd,
+.sg_row_val_container.odd {
+  background-color: #ffffff; /* Pure white for odd rows, maintaining a crisp and clean look */
+}
+
+/* Container Style */
+.sg_container {
+  padding: 10px;
+  background-color: #ffffff; /* Pure white for the main container, enhancing the elegance */
+  border-radius: var(--border-radius); /* Border radius as defined in :root */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth, slightly adjusted for a softer look */
+}
+
+.sg_date_header_item,
+.sg_time_header_item {
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #f7f7f7; /* Light gray to match the even rows, for consistency */
+  border-right: solid 1px #d1d1d1; /* Lighter gray for the border, ensuring it's not too harsh */
+  border-bottom: solid 1px #d1d1d1; /* Consistent border color with a softer appearance */
+  text-align: center;
+  vertical-align: middle;
+}
+
 .sg_container_wrapper {
   white-space: nowrap;
   font-family: "Roboto", Roboto, "Times New Roman", Times, serif;
   font-size: 15px;
-  color: #ffffff;
-}
-.sg_container {
-  padding: 5px 5px 5px 5px;
-  background-color: #b5bbbb;
-  border-radius: 5px;
+  color: #585050; /* Maintained the original text color for good contrast with the white background */
 }
 .sg_header_container {
   overflow-x: hidden;
 }
+
 .sg_desc_container {
   display: block;
   float: left;
-  border-right: solid 2px #ccc;
+  border-right: solid 2px #e6e6e6; /* Light gray for a softer border */
   font-weight: bold;
   overflow-y: auto;
+  background-color: #ffffff; /* White background for professionalism and elegance */
 }
-.sg_desc_container.with_time_header {
-  margin-top: 30px;
-}
-.sg_desc_container.with_date_header {
-  margin-top: 30px;
-}
+
+.sg_desc_container.with_time_header,
+.sg_desc_container.with_date_header,
 .sg_desc_container.with_datetime_header {
-  margin-top: 60px;
+  margin-top: 30px; /* Simplified to a single rule for all headers, assuming 30px is the uniform height of time and date headers */
 }
+
 .sg_desc_container.without_header {
   margin-top: 0;
 }
+
 .sg_row_desc_container:first-child {
   border-top-left-radius: 5px;
 }
+
 .sg_row_desc_container:last-child {
   border-bottom-left-radius: 5px;
 }
+
 .sg_row_desc_container {
   padding-left: 10px;
+  background-color: #ffffff; /* White background for each description row */
 }
+
 .sg_row_val_container {
   position: relative;
+  background-color: #ffffff; /* White background for value containers */
 }
+
 .sg_val_container {
   vertical-align: top;
   position: relative;
@@ -50,56 +84,45 @@
   overflow-y: hidden;
   padding-bottom: 0px;
 }
-.sg_row_desc_container.odd,
-.sg_row_val_container.odd {
-  background-color: #f0f0f0;
-}
-.sg_row_desc_container.even,
-.sg_row_val_container.even {
-  background-color: #e0e0e0;
-}
+
 .sg_date_header_container,
 .sg_time_header_container {
   width: 100%;
   white-space: nowrap;
   font-weight: bold;
+  background-color: #ffffff; /* White background for header containers */
 }
+
 .sg_date_header_container {
   position: relative;
   height: 30px;
   line-height: 30px;
 }
-.sg_date_header_item,
-.sg_time_header_item {
-  height: 30px;
-  line-height: 30px;
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: #f0f0f0;
-  border-right: solid 1px #e0e0e0;
-  border-bottom: solid 1px #e0e0e0;
-  text-align: center;
-  vertical-align: middle;
-}
+
 .sg_date_header_item {
-  border-left: solid 1px #e0e0e0;
+  border-left: solid 1px #e0e0e0; /* Light gray for a softer appearance */
   z-index: 102;
   position: absolute;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #ffffff; /* White background for each date header item */
 }
+
 .sg_date_header_item.scroll {
   z-index: 101;
 }
+
 .sg_date_header_item.scroll.conflict {
   z-index: 103;
 }
+
 .sg_date_header_item:last-child,
 .sg_header_item:last-child {
   border-right: none;
 }
+
 .sg_threshold {
   position: absolute;
   top: 50%;
@@ -108,18 +131,23 @@
   pointer-events: none;
   z-index: 101;
 }
+
 .sg_threshold_limit {
   position: absolute;
   display: block;
   width: 2px;
   height: 100%;
+  background-color: #e6e6e6; /* Light gray for visibility against white */
 }
+
 .sg_threshold_limit.begin {
   left: 0;
 }
+
 .sg_threshold_limit.end {
   right: 0;
 }
+
 .sg_threshold_line {
   position: absolute;
   display: block;
@@ -128,7 +156,9 @@
   width: calc(100% - 4px);
   height: 2px;
   margin-left: 2px;
+  background-color: #e6e6e6; /* Light gray line for subtle contrast */
 }
+
 .sg_activity {
   box-sizing: border-box;
   position: absolute;
@@ -136,110 +166,100 @@
   transform: translateY(-50%);
   min-width: 1px;
   z-index: 99;
-  background-color: rgba(0, 150, 0, 0.3);
+  background-color: rgba(0, 150, 0, 0.3); /* Soft green for activity indication, consider adjusting for contrast if needed */
 }
+
 .sg_activity.hover {
-  border: 2px solid #ffffff;
+  border: 2px solid #585050; /* Dark border for hovered activity for visibility */
   z-index: 103;
 }
-.sg_marker {
+
+.sg_marker,
+.sg_general_marker {
   box-sizing: content-box;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 101;
+  z-index: 101; /* Ensure markers are above most elements but below tooltips */
 }
-.sg_general_marker {
-  box-sizing: content-box;
-  position: absolute;
-  z-index: 100;
-}
-.sg_general_marker.with_time_header {
-  top: 30px;
-}
-.sg_general_marker.with_datetime_header {
-  top: 60px;
-}
+
+.sg_general_marker.with_time_header,
+.sg_general_marker.with_datetime_header,
 .sg_general_marker.with_date_header {
-  top: 30px;
+  top: 30px; /* Adjust top position based on header presence */
 }
+
 .sg_general_marker.without_header {
   top: 0;
 }
+
 .sg_general_highlight {
   box-sizing: content-box;
   opacity: 0.4;
   position: absolute;
-  z-index: 98;
+  z-index: 98; /* Below most interactive elements for highlight effect */
+  background-color: #f0f0f0; /* Light gray for highlights, ensuring visibility on white */
 }
-.sg_general_highlight.with_time_header {
-  top: 30px;
-}
-.sg_general_highlight.with_datetime_header {
-  top: 60px;
-}
-.sg_general_highlight.with_date_header {
-  top: 30px;
-}
-.sg_general_highlight.without_header {
-  top: 0;
-}
+
 .sg_marker.hover,
 .sg_general_marker.hover {
-  border: 2px solid #ffffff;
+  border: 2px solid #585050; /* Dark border for hovered markers for visibility */
   z-index: 103;
 }
+
 .sg_tooltip {
   font-family: "Roboto", Roboto, "Times New Roman", Times, serif;
   font-size: 15px;
-}
-.sg_tooltip {
   z-index: 99999;
   width: 300px;
   height: 110px;
   padding: 15px;
-  border: 2px solid;
+  border: 2px solid #e6e6e6; /* Light gray border for subtle contrast */
   border-radius: 10px;
   box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
-  background: #f0f0f0;
-  background: -moz-linear-gradient(top, #f0f0f0 0%, #ccc 100%);
-  background: -webkit-linear-gradient(top, #f0f0f0 0%, #ccc 100%);
-  background: linear-gradient(to bottom, #f0f0f0 0%, #ccc 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-soft', endColorstr='$color-low',GradientType=0 );
+  background: #ffffff; /* Solid white background replacing the gradient for a clean, modern look */
 }
+
 .sg_tooltip_badge {
   display: inline-block;
   width: 25px;
   height: 25px;
   padding: 5px;
   box-sizing: content-box;
-  border-radius: 100px;
+  border-radius: 100px; /* Circular badge by default */
   font-weight: bold;
   font-size: 20px;
   text-align: center;
   margin-right: 5px;
   margin-bottom: 5px;
+  background-color: #e6e6e6; /* Light gray for badges, ensuring readability */
+  color: #585050; /* Dark text for contrast */
 }
+
 .sg_tooltip_badge.square {
-  border-radius: 3px;
+  border-radius: 3px; /* Maintain square shape for specific badges */
 }
-.sg_tooltip_title {
+
+.sg_tooltip_title,
+.sg_tooltip_subtitle {
   font-weight: bold;
   font-size: 17px;
-  color: #ffffff;
+  color: #585050; /* Dark color for text readability */
 }
+
 .sg_tooltip_subtitle {
   display: block;
   text-align: right;
   font-size: 14px;
-  color: #ffffff;
   margin-top: 3px;
   margin-bottom: 3px;
   letter-spacing: 0.07em;
 }
+
 .sg_tooltip_description_wrapper {
   text-align: center;
 }
+
 .sg_tooltip_description_title {
   display: block;
   font-size: 14px;
@@ -247,22 +267,26 @@
   font-style: italic;
   margin-bottom: 5px;
 }
+
 .sg_tooltip_description {
   display: inline-block;
   margin-top: 15px;
   padding: 8px;
   border-radius: 7px;
-  background-color: #ffffff;
-  color: #f0f0f0;
+  background-color: #e6e6e6; /* Light gray for contrast and readability */
+  color: #585050; /* Dark text for readability */
   font-size: 17px;
 }
+
 .sg_no_data {
   font-family: "Roboto", Roboto, "Times New Roman", Times, serif;
   padding: 15px;
   border-radius: 7px;
-  background-color: #b5bbbb;
-  color: #ffffff;
+  background-color: #ffffff; /* White background for a clean look */
+  color: #585050; /* Dark text for contrast and readability */
   font-weight: bold;
   font-style: italic;
   text-align: center;
 }
+
+/*# sourceMappingURL=jquery.stacked-gantt.css.map */
