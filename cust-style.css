@@ -1,3 +1,14 @@
+.btn-outline-secondary {
+    background-color: transparent; /* Set background to transparent */
+    border: none; /* If you don't want a border */
+}
+
+/* If the icon itself has a background color set */
+.fas, .fa-eye {
+    background-color: transparent; /* Set background to transparent */
+}
+
+
 .elegant-title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elegant and readable font */
     font-size: 1.75rem; /* Adjusted font size for h4 */
